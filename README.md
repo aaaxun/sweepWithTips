@@ -77,3 +77,13 @@ border-color
 
 自执行函数
 https://segmentfault.com/q/1010000000117476
+
+if (window.ActiveXObject && parseInt(navigator.userAgent.match(/msie ([\d.]+)/i)[1]) < 8)
+window.ActiveXObject  判断浏览器是否支持ActiveX控件
+parseInt 用于解析一个字符串，并返回一个整数
+navigator.userAgent.match 判断浏览器
+/msie IE
+
+.join("") 数组.join
+把数组中的所有元素放入一个字符串
+
