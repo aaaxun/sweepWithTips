@@ -75,4 +75,5 @@ border-style:(上右底左) dotted solid double dashed
 border-width
 border-color
 
-	
+自执行函数
+https://segmentfault.com/q/1010000000117476
