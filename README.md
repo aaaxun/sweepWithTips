@@ -176,3 +176,7 @@ $.fn.testing = function() {}
 
 回调函数
 一般写程序是你调用系统的API，如果把关系反过来，你写一个函数，让系统调用你的函数，那就是回调了，那个被系统调用的函数就是回调函数。
+boss.OnCookFinish+=me.AcceptFood;//此处表明，AcceptFood这个回调函数关心OnCookFinish事件，并且变成这个事件的回调函数
+
+func.call（a）
+call 让指向别的地方的this指针指向a。
