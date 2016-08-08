@@ -161,3 +161,18 @@ window.onload=function(){...}的作用又跟声明函数loading function loading
 在页面全部加载完毕（包含图片下载）后才能执行。很明显，前者的执行效率高于后者。
   执行数量不同： $(document).ready可以重复写多个，并且每次执行结果不同；而window.
 onload尽管可以执行多个，但仅输出最后一个执行结果，无法完成多个结果的输出。
+
+$
+$ 是 JQuery 常用的一个回传函数，定义为 "选取" 英文是 selector 的缩写
+例子︰
+$.function(); 
+就是 选取 JQuery 定义的 function() 执行
+$('input')
+就是 选取 HTML 当中全部的 input 标签
+$('#abc')
+就是 选取 HTML 当中 ID 名称为 abc 的物件
+$.fn.testing = function() {}
+就是 选取 JQuery 内核函数 fn (函数) 回传给 testing 这个名称、定义为一个功能 function()
+
+回调函数
+一般写程序是你调用系统的API，如果把关系反过来，你写一个函数，让系统调用你的函数，那就是回调了，那个被系统调用的函数就是回调函数。
