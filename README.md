@@ -148,3 +148,16 @@ var person = {        //这里不算第一个函数
 }
 setTimeout、setInterval和匿名函数 会让this指向全局。
 https://github.com/goddyZhao/Translation/blob/master/JavaScript/this.md
+
+https://segmentfault.com/q/1010000000521879
+
+-----------------------------
+math.floor 向下取整。
+
+$(document).ready(function(){}) 可以简写成 $(function(){})
+window.onload=function(){...}的作用又跟声明函数loading function loading(){...}，并在html的<body onload="loading()">调用一样。
+区别 ：
+  执行时间不同： $(document).ready在页面框架下载完毕后就执行；而window.onload必须
+在页面全部加载完毕（包含图片下载）后才能执行。很明显，前者的执行效率高于后者。
+  执行数量不同： $(document).ready可以重复写多个，并且每次执行结果不同；而window.
+onload尽管可以执行多个，但仅输出最后一个执行结果，无法完成多个结果的输出。
