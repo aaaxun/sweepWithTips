@@ -87,3 +87,64 @@ navigator.userAgent.match 判断浏览器
 .join("") 数组.join
 把数组中的所有元素放入一个字符串
 
+-------------this----------------
+当一个函数被保存为一个对象的属性时，我们称它为一个方法。当一个方法被调用时，this被绑定到该对象。
+
+当一个函数并非一个对象的属性时，那么它就是被当做一个函数来调用的：
+var sum = add(3,4);
+
+var foo = {x: 10};
+ var bar = {
+  x: 20,
+  test: function () {
+  alert(this === bar); // true
+  alert(this.x); // 20
+  这里x是全局变量，means 里面改了x 最终x的值会跟着改变。
+  
+  
+  function counter2(start){ 
+    var count = start;   
+    var increase = function(){
+         this.count++;
+    }; 
+    var getValue = function(){
+         return this.count;
+    };
+    return { 
+    inc : increase , 
+    get :getValue }
+}
+
+var c2 = new counter2(5);
+/*
+实例化c2:
+传入参数start=5；
+定义并赋值内部变量count=5
+定义increase和getValue函数表达式
+将一个匿名对象赋值给c2，对象包含inc和get两个属性，分别指向两个函数。
+*/
+c2.inc(); //can NOT access this.count
+/*
+直接执行对象c2下的inc函数。由于是直接执行函数，函数中的this将被指向函数的调用者：对象c2。
+increase函数试图查找this.count，即c2.count，并执行++操作。
+由于对象c2中不存在count属性，对一个undefined对象进行++操作时生成NaN，即c2.count被赋值为NaN。
+*/
+console.log(c2.get());//return NaN
+/*
+直接执行对象c2下的get函数。函数this指向c2，因此返回在c2.count。由于在increase中，c2.count被赋值为NaN，因此返回NaN。
+*/
+
+内部函数，就是函数里有函数。
+var name = "clever coder";
+var person = {        //这里不算第一个函数
+	name : "foocoder",
+	hello : function(sth){   //这是第一个函数
+		var that = this;
+		var sayhello = function(sth) {   //这是第二个
+			console.log(that.name + " says " + sth);
+		};
+		sayhello(sth);
+	}
+}
+setTimeout、setInterval和匿名函数 会让this指向全局。
+https://github.com/goddyZhao/Translation/blob/master/JavaScript/this.md
