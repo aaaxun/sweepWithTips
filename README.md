@@ -181,12 +181,48 @@ boss.OnCookFinish+=me.AcceptFood;//此处表明，AcceptFood这个回调函数�
 func.call（a）
 call 让指向别的地方的this指针指向a。
 
-
 self.$("m_" + i + "_" + j).onmousedown = function (e) {
-e = e || window.event;  //获取事件
-onmousedown 当元素上按下鼠标按钮时触发
-e.button =0|1|2 means 左中右 键
+e = e || window.event;　//ie和非ie下获取事件对象
+.onmousedown：当元素上按下鼠标按钮时触发
+e.button = 0|1|2 means 左中右键
 
-绑定
-
+绑定事件：
+self.$(~).onmousedown = function（e）{
+className = “flag” 之类的
+}
 删除绑定
+self.$(~).onmousedown = "";
+
+var self = this
+http://www.cnblogs.com/uedt/articles/1748422.html
+
+闭包
+http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
+父对象的所有变量，对子对象都是可见的，反之则不成立。
+object.getnameFunc()() 也可以改为object.getnameFunc().call()
+
+
+代码一：
+var name = "The Window";
+　　var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+　　　　　　return function(){
+　　　　　　　　return this.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());
+　　
+代码二：　　
+var name = "The Window";
+　　var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+　　　　　　var that = this;
+　　　　　　return function(){
+　　　　　　　　return that.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());
