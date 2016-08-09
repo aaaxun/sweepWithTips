@@ -225,4 +225,8 @@ var name = "The Window";
 　　　　　　};
 　　　　}
 　　};
-　　alert(object.getNameFunc()());
+alert(object.getNameFunc()());
+
+
+hoist机制：undefined 说明已经声明 但没赋值。如果没声明，则是报错。
+http://www.bootcss.com/article/variable-and-function-hoisting-in-javascript/
