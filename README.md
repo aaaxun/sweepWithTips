@@ -180,3 +180,13 @@ boss.OnCookFinish+=me.AcceptFood;//此处表明，AcceptFood这个回调函数�
 
 func.call（a）
 call 让指向别的地方的this指针指向a。
+
+
+self.$("m_" + i + "_" + j).onmousedown = function (e) {
+e = e || window.event;  //获取事件
+onmousedown 当元素上按下鼠标按钮时触发
+e.button =0|1|2 means 左中右 键
+
+绑定
+
+删除绑定
