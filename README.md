@@ -230,3 +230,14 @@ alert(object.getNameFunc()());
 
 hoist机制：undefined 说明已经声明 但没赋值。如果没声明，则是报错。
 http://www.bootcss.com/article/variable-and-function-hoisting-in-javascript/
+
+
+$: function (id) {
+    return this.doc.getElementById(id);
+}
+选择器函数
+$(id)是js document.getElementById(id)的简写
+定义了这个方法 以后调用的时候就可以直接用$(id).innnerHTML  或者$(id).innerText
+
+
+apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象
