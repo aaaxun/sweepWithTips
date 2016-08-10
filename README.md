@@ -241,3 +241,51 @@ $(id)是js document.getElementById(id)的简写
 
 
 apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象
+
+-----this---------
+var o = {}相当于 var o=new Object() 
+
+var Foo = {};
+Foo.method = function(){ 
+var test = function(){
+console.log(this);
+}
+test();
+};
+
+
+var x = 2;
+function test()
+{
+　　　　	this.x = 1;
+}
+var o = new test();
+alert("o.x: " + o.x); //1
+o.x = 3;
+test();
+x*=10;
+　　alert("o.x: " + o.x); //3
+alert("x: " + x); //10
+其实这里是这样的，第一个x=2是window的属性，第一个x=1，是o对象的属性，
+到了o.x = 3;，明显o对象的属性x=3了，然后运行test()，这是，它等于window.test()，所以，这时test()里面的this指向的是window，所以改变的是window的x，所以window.x=1，所以x*=10就是x=1*10
+Foo.method();
+//留住this
+var Foo = {};
+Foo.method = function(){ 
+vaar me=this;
+var test = function(){
+console.log(me);
+}
+test();
+};
+Foo.method();
+//bind绑定this
+var Foo = {};
+Foo.method = function(){ 
+var test = function(){
+console.log(this);
+}.bind(this)
+test();
+};
+Foo.method();
+这样两种方法绑定的this指向的都是Foo，而不再是window了
