@@ -289,3 +289,9 @@ test();
 };
 Foo.method();
 这样两种方法绑定的this指向的都是Foo，而不再是window了
+
+
+ul 消除圆点以及在同一行
+http://www.cnblogs.com/love540376/p/4533248.html
+display: inline;  /*可以让它放在同一行。float也可以，但是无法直接消除点*/
+padding-right: 150px; /*用了display 再用padding或margin调间距*/
