@@ -319,3 +319,43 @@ document.body.onmouseover=”func()”
 document.getElementById("div").innerHTML; 
 <a href="#" id="link">bbb</a>
 document.getElementById("link").innerHTML;
+
+onclick 可以放在html的标签里，也可以放在js的函数里。
+
+调用js函数。
+直接的话
+alert(“王司徒”); 这样是可以的。
+---
+function test() {
+alert("王司徒");
+}
+----- 这样是不可以的。---------
+so：
+调用js函数的四种方法：
+http://www.cnblogs.com/leejersey/p/3663278.html
+http://www.cnblogs.com/mq0036/p/3934867.html
+1.方法调用模式<——————this指向调用对象
+2.函数调用模式<——————this指向window
+3.构造器调用模式<——————在使用prototype的方法时，必须实例化该对象才能调用其方法。
+var myfunc = function(a){
+　　this.a = a;
+};
+myfunc.prototype = {
+　　show:function(){alert(this.a);}
+}
+var newfunc = new myfunc("123123123");
+newfunc.show();
+
+4.apply,call调用模式<——————为了改模式2中this的指针，让它指向调用的函数。
+格式：
+http://www.cnblogs.com/huyong/p/4139875.html
+Obj.call(thisObj,arg1,arg2…)
+Obj.apply(thisObj,[arg1,arg2…])
+意思是把Obj的方法放到thisObj上执行。
+
+
+构造方式——>Object.create()法或字面量
+Object.create http://www.cnblogs.com/huyong/p/4137870.html
+字面量 http://www.cnblogs.com/mofish/archive/2013/04/10/3012912.html
+
+*如果要调用这个方法不加括号，就是返回方法代码；如果要调用这个方法该对象属性后面加上括号，就得到方法的返回值
