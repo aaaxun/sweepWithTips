@@ -24,7 +24,7 @@ label for for后面加的是id 和id绑定 （显式绑定）
 解决html引用css不起作用的问题。
   resave html和css为utf-8。
   meta 部分要加 charset=“utf-8”
-  
+
   
 css  //css 叫外部样式表。内部用<style></style>。内联在标签内用一个style。
 .main table td {  //这行叫选择器。要改样式的元素。 要完全按顺序符合，嵌套在main，table，td里面的才调用下面的样式。
@@ -295,3 +295,27 @@ ul 消除圆点以及在同一行
 http://www.cnblogs.com/love540376/p/4533248.html
 display: inline;  /*可以让它放在同一行。float也可以，但是无法直接消除点*/
 padding-right: 150px; /*用了display 再用padding或margin调间距*/
+
+
+---------js和html的交互--------------
+http://www.cnblogs.com/wang7/archive/2012/07/29/2614202.html
+document.getElementById("id")  只是获取某元素ID为id的对象。
+document.getElementById("id").value 是获得这个对象的值。
+（一条标签里有 type=啥啥 id=啥啥 value=啥啥，上文第二条调用的就是这个value）
+value 既可以给数值、文本，也可以给函数。
+getElementById("id")的属性：
+http://www.cnblogs.com/yansheng/archive/2010/01/25/1656014.html
+document.body.href
+document.body.src
+document.body.height
+document.body.value
+对象事件：
+document.body.onclick=”func()” 
+document.body.onmouseover=”func()”
+
+~.innerHTML: 返回表格行的开始和结束标签之间的 HTML。
+取标签之间的值（aaa 或 bbb）：
+<div id="div">aaa</div>
+document.getElementById("div").innerHTML; 
+<a href="#" id="link">bbb</a>
+document.getElementById("link").innerHTML;
