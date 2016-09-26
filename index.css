@@ -1,0 +1,117 @@
+.main {
+	margin:30px auto;
+	padding:10px 5px;
+	background:#EEE;
+	width:380px;
+	zoom:1;
+}
+
+.main #showInfo {
+	text-align:center;
+	top:10px;
+    width: 100%;
+/*   overflow: hidden; */
+    zoom: 1; 
+}
+
+.main p {
+	display: inline;
+	position:relative;
+	top:10px;
+}
+
+.main p.posLeft {
+	position:relative;
+	top:10px;
+	left:-10%;
+
+}
+
+.main p.posRight {
+	position:relative;
+	top:10px;
+	right:-10%;
+}
+
+.main input[type=button] {
+	padding:10px 6px;
+	font-size:18px;
+	cursor:pointer;
+}
+
+.main span {
+	font-size:30px;
+	color:red;
+	position:relative;
+	top:5px
+}
+
+.main #chooseLevel {
+	text-align:center;	
+	width:auto;
+	margin-bottom:-15px;
+}
+
+.main ul {
+	list-style:none;
+	height:20px;
+	text-align:center;
+	margin-top:-10px;
+	margin-left:-20px;
+}
+
+.main ul li {
+	display:inline;
+	margin-right:5%;
+}
+
+.main label {
+	font-size:13px;
+	color:#6495ED;
+}
+
+.main input[type='radio'] {
+	cursor:pointer;
+}
+
+.main:after{
+		clear:both;
+		display:block;
+		content:"";
+		line-height:0;
+		height:0;
+		visibility:hidden;
+	}
+
+.main table {
+    background:#CCC;
+    margin: 30px auto;
+}
+
+    .main table td {
+        border:2px outset #EEE;
+        font-size:16px;
+        width:20px;
+        height:20px;
+        text-align:center;
+        cursor:pointer;
+    }
+
+    .main table td.normal {
+        border:2px solid #EEE; /*格子的边框*/
+		background-color:#AAA; /*格子的颜色*/
+	}
+
+.landMine {
+	background-image:url(mine.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:90%;
+}
+
+.flag {
+	background-image:url(flag.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:90%;
+}

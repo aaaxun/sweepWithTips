@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Java版扫雷</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+	<div id="JMS_main" class="main">
+		<div id="showInfo">	
+			<p class="posLeft">用时 <span id="costTime">0</span> </p>	
+			<p ><input type="button" id="begin" value="开始"/></p>
+			<p class="posRight">余雷 <span id="restCount">0</span> </p>					
+		</div>
+
+		<table id="sweepper" value="test123" ></table>
+
+		<div id="chooseLevel">
+			<ul>
+				<li>
+				<input type="radio" name="level" id="sLevel" checked="checked" value="10" />
+				<label for="sLevel">简单(9*9)</label> 
+				</li> 
+				<li>
+				<input type="radio" name="level" id="mLevel" value="40" />
+				<label for="mLevel">普通(16*16)</label> 
+				</li> 
+				<li>
+				<input type="radio" name="level" id="hLevel" value="99" />
+				<label for="hLevel">困难(16*30)</label> 
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div style="width:200px;height:200px;background-color:Black;"> 
+	<script src="jms.js"></script>
+	<!--<script src="index.js"></script> -->
+</body>
+</html>
